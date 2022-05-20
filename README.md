@@ -11,5 +11,5 @@ OptControl.jl is a interface that transforms optimal control problem to:
 * Differential Equations Problems(DEP)
 * Optimzation Problems(OP)
 
-DEP can solved by [DifferentialEquations.jl](https://diffeq.sciml.ai/dev/) and OP can solve by [JuMP.jl](https://jump.dev/JuMP.jl/stable/)
+DEP can be solved by [DifferentialEquations.jl](https://diffeq.sciml.ai/dev/) and OP can be solved by [JuMP.jl](https://jump.dev/JuMP.jl/stable/)
 
