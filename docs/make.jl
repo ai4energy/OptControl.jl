@@ -20,5 +20,5 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/jake484/OptControl.jl",
-    devbranch="main",
+    push_preview=true,
 )
