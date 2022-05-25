@@ -17,8 +17,7 @@ end
     tf = [0.0, 0.0]
     tspan = (0.0, 2.0)
     N = 100
-    sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N,
-        writeFilePath="test.jl")
+    sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N)
     xs = collect(range(tspan[1], tspan[2], length=N))
     an = @.(0.5 * xs^3 - 1.75 * xs^2 + xs + 1)
     res = mean(abs.(an - sol[1][:, 1]))
@@ -84,7 +83,7 @@ end
     tf = [0.0, nothing]
     tspan = (0.0, 2.0)
     N = 100
-    sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N, writeFilePath="test.jl")
+    sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N)
     xs = collect(range(tspan[1], tspan[2], length=N))
     an_u2 = @.(9 / 14 * xs - 9 / 7)
     res1 = mean(abs.(-9 / 14 .- sol[2][:, 1]))
@@ -105,7 +104,7 @@ end
     uub = [1.0]
     ulb = [-1.0]
     sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf, Φ, nothing;
-        N=N, u_ub=uub, u_lb=ulb, writeFilePath="test.jl")
+        N=N, u_ub=uub, u_lb=ulb)
     xs = collect(range(tspan[1], tspan[2], length=N))
     an = @.(2 * exp(-xs) - 1)
     res = mean(abs.(an - sol[1][:, 1]))
@@ -122,7 +121,7 @@ end
     tspan = (0.0, 2.0)
     N = 100
     sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N,
-        writeFilePath="test.jl")
+        )
     xs = collect(range(tspan[1], tspan[2], length=N))
     an = @.(2 / (4 - sin(2)^2) * ((cos(2) * sin(2) - 2) * cos(xs) + sin(2)^2 * sin(xs)))
     res = mean(abs.(an - sol[2][:, 1]))
