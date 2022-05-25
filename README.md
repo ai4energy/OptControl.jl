@@ -15,7 +15,7 @@ An example of optimal control problem:
 
 $$
 \begin{matrix}
-min \int_{0}^{2} u^2dt \\ s.t. \hspace{0.4cm} \dot{\boldsymbol{x}} =\begin{bmatrix}0&1 \\ 0&0\end{bmatrix}\boldsymbol{x}+ \begin{bmatrix}0 \\ 1 \end{bmatrix}u \\ \boldsymbol{x}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \boldsymbol{x}(2)=\begin{bmatrix} 0 \\ 0 \end{bmatrix}
+min \int_{0}^{2} u^2dt \newline s.t. \~~~~~ \dot{\boldsymbol{x}} =\begin{bmatrix}0&1 \newline 0&0\end{bmatrix}\boldsymbol{x}+ \begin{bmatrix}0 \newline 1 \end{bmatrix}u \newline \boldsymbol{x}(0) = \begin{bmatrix} 1 \newline 1 \end{bmatrix}, \boldsymbol{x}(2)=\begin{bmatrix} 0 \newline 0 \end{bmatrix}
 \end{matrix}
 $$
 
