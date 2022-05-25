@@ -1,2 +1,159 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Home · OptControl.jl</title><script data-outdated-warner src="assets/warner.js"></script><link rel="canonical" href="https://jake484.github.io/OptControl.jl/"/><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.044/juliamono.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href>OptControl.jl</a></span></div><form class="docs-search" action="search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li class="is-active"><a class="tocitem" href>Home</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Home</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Home</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/jake484/OptControl.jl/blob/master/docs/src/index.md#" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="OptControl"><a class="docs-heading-anchor" href="#OptControl">OptControl</a><a id="OptControl-1"></a><a class="docs-heading-anchor-permalink" href="#OptControl" title="Permalink"></a></h1><p>Documentation for <a href="https://github.com/jake484/OptControl.jl">OptControl</a>.</p><ul></ul></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.18 on <span class="colophon-date" title="Wednesday 25 May 2022 09:46">Wednesday 25 May 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Home · OptControl.jl</title><script data-outdated-warner src="assets/warner.js"></script><link rel="canonical" href="https://jake484.github.io/OptControl.jl/"/><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.044/juliamono.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href><img src="assets/logo.svg" alt="OptControl.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href>OptControl.jl</a></span></div><form class="docs-search" action="search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li class="is-active"><a class="tocitem" href>Home</a><ul class="internal"><li><a class="tocitem" href="#What-is-OptControl.jl?"><span>What is OptControl.jl?</span></a></li><li><a class="tocitem" href="#Quick-Start"><span>Quick Start</span></a></li></ul></li><li><span class="tocitem">Basics</span><ul><li><a class="tocitem" href="basics/OptimalControlInMath/">Solution of Math Form</a></li><li><a class="tocitem" href="basics/DEsolution/">Differential Equations Solution</a></li><li><a class="tocitem" href="basics/JuMPsolution/">Optimization Solution</a></li><li><a class="tocitem" href="basics/base/">Basic Functions</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Home</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Home</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/jake484/OptControl.jl/blob/master/docs/src/index.md#" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="OptControl"><a class="docs-heading-anchor" href="#OptControl">OptControl</a><a id="OptControl-1"></a><a class="docs-heading-anchor-permalink" href="#OptControl" title="Permalink"></a></h1><h2 id="What-is-OptControl.jl?"><a class="docs-heading-anchor" href="#What-is-OptControl.jl?">What is OptControl.jl?</a><a id="What-is-OptControl.jl?-1"></a><a class="docs-heading-anchor-permalink" href="#What-is-OptControl.jl?" title="Permalink"></a></h2><p>OptControl.jl is a interface that use symbols to build optimal control problem based on <a href="https://symbolics.juliasymbolics.org/dev/">Symbolics.jl</a>, and then transforms optimal control problem to:</p><ul><li>Differential Equations Problems(DEP)</li><li>Optimzation Problems(OP)</li></ul><p>DEP can be solved by <a href="https://diffeq.sciml.ai/dev/">DifferentialEquations.jl</a> and OP can be solved by <a href="https://jump.dev/JuMP.jl/stable/">JuMP.jl</a></p><p>Features of OptControl.jl:</p><ul><li><code>Symbolics.jl</code> makes problem building very easy and user-friendly</li><li>Script generation provides a template of <code>JuMP.jl</code> solution code or <code>DifferentialEquations.jl</code> solution code, and you can design your code based on template.</li><li>Get results directly if you want.</li></ul><h2 id="Quick-Start"><a class="docs-heading-anchor" href="#Quick-Start">Quick Start</a><a id="Quick-Start-1"></a><a class="docs-heading-anchor-permalink" href="#Quick-Start" title="Permalink"></a></h2><h3 id="Install"><a class="docs-heading-anchor" href="#Install">Install</a><a id="Install-1"></a><a class="docs-heading-anchor-permalink" href="#Install" title="Permalink"></a></h3><pre><code class="language-julia hljs">using Pkg
+Pkg.add(&quot;OptControl&quot;)</code></pre><h3 id="Solve-Problem"><a class="docs-heading-anchor" href="#Solve-Problem">Solve Problem</a><a id="Solve-Problem-1"></a><a class="docs-heading-anchor-permalink" href="#Solve-Problem" title="Permalink"></a></h3><p>To solve optimal control problem:</p><p class="math-container">\[min \int_{0}^{2} u^2dt \\s.t. \hspace{0.4cm} \dot{\boldsymbol{x}} =\begin{bmatrix}0&amp;1 \\0&amp;0\end{bmatrix}\boldsymbol{x}+ \begin{bmatrix}0\\1\end{bmatrix}u\\\boldsymbol{x}(0)=\begin{bmatrix}1\\1\end{bmatrix},\boldsymbol{x}(2)=\begin{bmatrix}0\\0\end{bmatrix}\]</p><p>Copy and run:</p><pre><code class="language-julia hljs">using Symbolics,OptControl
+@variables t u x[1:2]
+f = [0 1; 0 0] * x + [0, 1] * u
+L = 0.5 * u^2
+t0 = [1.0, 1.0]
+tf = [0.0, 0.0]
+tspan = (0.0, 2.0)
+N = 100
+sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N, 
+writeFilePath=&quot;JuMPscript.jl&quot;)</code></pre><p>In Current folder, you will see</p><pre><code class="language-powershell hljs">CurrentFolder/
+└──JuMPscript.jl</code></pre><p>And you will see contents of <code>JuMPscript.jl</code></p><pre><code class="language-julia hljs">begin
+    using Pkg
+    pkgNeeds = [&quot;JuMP&quot;, &quot;Ipopt&quot;, &quot;Symbolics&quot;]
+    alreadyGet = keys(Pkg.project().dependencies)
+    toAdd = [package for package in pkgNeeds if package ∉ alreadyGet]
+    isempty(toAdd) ? nothing : Pkg.add(toAdd)
+end
+using Symbolics,Ipopt,JuMP
+
+#============Function Parts================#
+discretization_trapezoidal = function (yi, h, index, args...)
+    return yi + h / 2 * (args[1] + args[2])
+end
+L_objectiveFunc = function (ˍ₋arg1,)
+    #= C:\Users\DELL\.julia\packages\SymbolicUtils\v2ZkM\src\code.jl:349 =#
+    #= C:\Users\DELL\.julia\packages\SymbolicUtils\v2ZkM\src\code.jl:350 =#
+    #= C:\Users\DELL\.julia\packages\SymbolicUtils\v2ZkM\src\code.jl:351 =#
+    begin
+        (*)(0.5, (^)(ˍ₋arg1[3], 2))
+    end
+end
+F_statesFunc = function (ˍ₋arg1,)
+    #= C:\Users\DELL\.julia\packages\SymbolicUtils\v2ZkM\src\code.jl:349 =#
+    #= C:\Users\DELL\.julia\packages\SymbolicUtils\v2ZkM\src\code.jl:350 =#
+    #= C:\Users\DELL\.julia\packages\SymbolicUtils\v2ZkM\src\code.jl:351 =#
+    begin
+        begin
+            #= C:\Users\DELL\.julia\packages\SymbolicUtils\v2ZkM\src\code.jl:444 =#
+            (SymbolicUtils.Code.create_array)(typeof(ˍ₋arg1), nothing, Val{1}(), Val{(2,)}(), (getindex)(ˍ₋arg1, 2), ˍ₋arg1[3])
+        end
+    end
+end
+
+
+
+#========== define model =============#
+model = Model(Ipopt.Optimizer)
+set_optimizer_attribute(model, &quot;print_level&quot;, 0)
+
+#========== define variables =============#
+JuMP.@variable(model,  x[1:100, j=1:2] )
+JuMP.@variable(model,  u[1:100, j=1:1] )
+
+#========== boundary constraint =============#
+JuMP.@NLconstraint(model, [j = 1:2],x[1, j] == [1.0, 1.0][j])
+JuMP.@NLconstraint(model, 
+    [j = [i for i in 1:2 if !isequal([0.0, 0.0][i],nothing)]],
+     x[end, j] == [0.0, 0.0][j])
+
+
+#========== state constraint =============#
+JuMP.@NLconstraint(model, [i = 1:99, j = 1:2],
+        x[i+1,j] == discretization_trapezoidal(x[i,:], 0.02, i, 
+	F_statesFunc(append!([],x[i+1,:],u[i+1,:])),
+	F_statesFunc(append!([],x[i+0,:],u[i+0,:])),
+	)[j])
+
+#========== objective =============#
+_sum_ = [L_objectiveFunc(append!([],x[i,:],u[i,:])) for i in 1:100]
+JuMP.@NLobjective(model, Min, sum(_sum_[i] for i in 1:100))
+
+#================ solve ==================#
+JuMP.optimize!(model)
+(x,u) = (JuMP.value.(x)[:,:],JuMP.value.(u)[:,:])
+</code></pre><p>Actually, OptControl.jl just run the generated script automatically. If you are familiar with JuMP.jl or DifferentialEquations.jl and want to do more things, just give <code>writeFilePath</code> a value(name of Julia script).</p><h3 id="Solution-Handle"><a class="docs-heading-anchor" href="#Solution-Handle">Solution Handle</a><a id="Solution-Handle-1"></a><a class="docs-heading-anchor-permalink" href="#Solution-Handle" title="Permalink"></a></h3><p>If you don&#39;t know JuMP.jl or DifferentialEquations.jl. Don&#39;t worry, just run and get the results. Do what you want with the results.</p><p>Get state:</p><pre><code class="language-julia hljs">x = sol[1]
+
+100×2 Matrix{Float64}:
+ 1.0           1.0
+ 1.01947       0.946775
+ 1.0377        0.876642
+ 1.05455       0.807758
+ 1.07002       0.740124
+ 1.08416       0.673739
+ 1.09699       0.608604
+ 1.10852       0.544719
+ 1.11879       0.482083
+ 1.12782       0.420697
+ 1.13563       0.36056
+ 1.14225       0.301673
+ 1.14771       0.244036
+ 1.15202       0.187648
+ 1.15523       0.13251
+ 1.15734       0.0786212
+ 1.15838       0.0259822
+ 1.15839      -0.0254071
+ 1.15738      -0.0755468
+ ⋮
+ 0.13861      -0.715141
+ 0.124606     -0.685306
+ 0.11121      -0.654221
+ 0.0984493    -0.621886
+ 0.0863474    -0.588302
+ 0.0749297    -0.553469
+ 0.0642211    -0.517386
+ 0.0542468    -0.480053
+ 0.0450315    -0.44147
+ 0.0366004    -0.401638
+ 0.0289785    -0.360557
+ 0.0221907    -0.318226
+ 0.0162619    -0.274645
+ 0.0112174    -0.229814
+ 0.00708187   -0.183734
+ 0.00388048   -0.136405
+ 0.00163818   -0.0878253
+ 0.000379965  -0.0379965
+ 0.0           0.0</code></pre><p>Get u:</p><pre><code class="language-julia hljs">u = sol[2]
+
+100×1 Matrix{Float64}:
+ -1.7845763373682157
+ -3.537912486353386
+ -3.475432109587295
+ -3.412951732821204
+ -3.3504713560551127
+ -3.2879909792890216
+ -3.22551060252293
+ -3.163030225756839
+ -3.1005498489907475
+ -3.038069472224657
+ -2.975589095458566
+ -2.913108718692475
+ -2.850628341926384
+ -2.788147965160293
+ -2.725667588394202
+ -2.663187211628111
+ -2.6007068348620197
+ -2.5382264580959286
+ -2.4757460813298375
+  ⋮
+  1.4605176549338985
+  1.5229980316999896
+  1.5854784084660805
+  1.6479587852321715
+  1.7104391619982624
+  1.7729195387643535
+  1.8353999155304446
+  1.8978802922965357
+  1.9603606690626267
+  2.022841045828718
+  2.085321422594809
+  2.1478017993609
+  2.210282176126991
+  2.272762552893082
+  2.3352429296591732
+  2.3977233064252643
+  2.4602036831913554
+  2.5226840599574465
+  1.276962124170246</code></pre></article><nav class="docs-footer"><a class="docs-footer-nextpage" href="basics/OptimalControlInMath/">Solution of Math Form »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.18 on <span class="colophon-date" title="Wednesday 25 May 2022 09:52">Wednesday 25 May 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
