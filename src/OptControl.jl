@@ -1,7 +1,9 @@
 module OptControl
 using Symbolics
 using LinearAlgebra
-using JuMP, DifferentialEquations
+using JuMP
+using DifferentialEquations
+using DocStringExtensions
 
 scalarize = Symbolics.scalarize
 

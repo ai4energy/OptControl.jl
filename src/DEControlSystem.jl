@@ -86,6 +86,56 @@ function add_sol(odefuncName, boundaryConditionFuncName, tspan, dt)
     str *= "sol = DifferentialEquations.solve(bvp, GeneralMIRK4(), dt=$(dt), reltol=1e-8, abstol=1e-8)"
 end
 
+
+"""
+$(TYPEDSIGNATURES)
+
+`generateDEcodes` will generate the solution code that using `DifferentialEquations.jl` to solve problem
+
+A general form of optimal control problem:
+
+```math
+min (\\Phi(\\boldsymbol{x}(t_f),t_f)+\\int_{t_0}^{t_f} 
+L[\\boldsymbol{x}(t),\\boldsymbol{u}(t),t]dt) \\\\
+s.t. \\hspace{0.4cm} \\dot{\\boldsymbol{x}} =f[\\boldsymbol{x}(t),\\boldsymbol{u}(t),t]
+```
+
+args:
+
+- `L`: above L
+```math
+L[\\boldsymbol{x}(t),\\boldsymbol{u}(t),t]
+```
+- `F`: above f
+```math
+f[\\boldsymbol{x}(t),\\boldsymbol{u}(t),t]
+```
+- `state`: states(variable) in `F`
+- `u`: control variable u in `F`
+- `tspan`: time field
+- `t0`: initial value at `tspan[1]`, length of `t0` must be equal to length of state
+- `tf`: final(end) value at `tspan[2]`, length of `tf` must be equal to length of state
+- `Φ`: above Φ, default: nothing
+```math
+\\Phi(\\boldsymbol{x}(t_f),t_f)
+```
+- `dt`: dt of BVProblem, default: 0.1
+- `guess`: initial value of BVProblem, default: 1.0. length of guess must be equal to (2*length(state)+length(u))
+- `writeFilePath`: path of generated code, default: nothing
+
+Example:
+
+```julia
+using Symbolics,OptControl
+@variables t u x[1:2]
+f = [0 1; 0 0] * x + [0, 1] * u
+L = 0.5 * u^2
+t0 = [1.0, 1.0]
+tf = [0.0, 0.0]
+tspan = (0.0, 2.0)
+sol = generateDEcodes(L, f, x, u, tspan, t0, tf)
+```
+"""
 function generateDEcodes(L, F, state, u, tspan, t0, tf, Φ=nothing, dt=0.1,
     guess=nothing, writeFilePath=nothing)
     check_system(state, tspan, t0, tf)

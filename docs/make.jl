@@ -11,10 +11,16 @@ makedocs(;
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
         canonical="https://jake484.github.io/OptControl.jl",
-        assets=String[],
+        # assets="assets/logo.svg",
     ),
     pages=[
         "Home" => "index.md",
+        "Basics" => Any[
+            "basics/OptimalControlInMath.md",
+            "basics/DEsolution.md",
+            "basics/JuMPsolution.md",
+            "basics/base.md"
+        ]
     ],
 )
 

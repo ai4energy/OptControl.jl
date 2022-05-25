@@ -120,8 +120,8 @@ end
     tf = [0.0, 0.0]
     tspan = (0.0, 2.0)
     N = 100
-    sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N,
-        )
+    sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N
+    )
     xs = collect(range(tspan[1], tspan[2], length=N))
     an = @.(2 / (4 - sin(2)^2) * ((cos(2) * sin(2) - 2) * cos(xs) + sin(2)^2 * sin(xs)))
     res = mean(abs.(an - sol[2][:, 1]))
