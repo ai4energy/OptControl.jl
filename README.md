@@ -14,7 +14,7 @@ DEP can be solved by [DifferentialEquations.jl](https://diffeq.sciml.ai/dev/) an
 An example of optimal control problem:
 
 $$
-min \int_{0}^{2} u^2dt \\s.t. \hspace{0.4cm} \dot{\boldsymbol{x}} =\begin{bmatrix}0&1 \\0&0\end{bmatrix}\boldsymbol{x}+ \begin{bmatrix}0\\1\end{bmatrix}u\\\boldsymbol{x}(0)=\begin{bmatrix}1\\1\end{bmatrix},\boldsymbol{x}(2)=\begin{bmatrix}0\\0\end{bmatrix}
+min \int_{0}^{2} u^2dt \\ s.t. \hspace{0.4cm} \dot{\boldsymbol{x}} =\begin{bmatrix}0&1 \\ 0&0\end{bmatrix}\boldsymbol{x}+ \begin{bmatrix}0 \\ 1 \end{bmatrix}u \\ \boldsymbol{x}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \boldsymbol{x}(2)=\begin{bmatrix} 0 \\ 0 \end{bmatrix}
 $$
 
 And use `OptControl.jl` to transform it to `JuMP` code to solve it.
