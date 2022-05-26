@@ -1,7 +1,7 @@
 module OptControl
 using Symbolics
 using LinearAlgebra
-using JuMP
+import JuMP
 using DifferentialEquations
 using DocStringExtensions
 
@@ -44,5 +44,6 @@ include("JPControlSystem.jl")
 include("DEControlSystem.jl")
 
 export generateJuMPcodes, generateDEcodes, scalarize
+export @variables
 
 end

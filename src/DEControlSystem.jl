@@ -136,7 +136,7 @@ tspan = (0.0, 2.0)
 sol = generateDEcodes(L, f, x, u, tspan, t0, tf)
 ```
 """
-function generateDEcodes(L, F, state, u, tspan, t0, tf, Φ=nothing, dt=0.1,
+function generateDEcodes(L, F, state, u, tspan, t0, tf, Φ=nothing, dt=0.1;
     guess=nothing, writeFilePath=nothing)
     check_system(state, tspan, t0, tf)
 

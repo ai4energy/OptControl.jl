@@ -227,7 +227,7 @@ x_{1}+x_{2}=0
 - `u_lb`: u's lower limit, length of `state_lb` must be equal to length of u, default: nothing
 - `N`: Number of discrete, default: 1000
 ```math
-dt = (end_time - start_time) / N
+dt = (endTime - startTime) / N
 ```
 - `discretization`: discretization methods, default: "trapezoidal"
 - `model_name`: name of JuMP model, default: "model"

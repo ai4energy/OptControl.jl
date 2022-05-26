@@ -17,9 +17,9 @@ makedocs(;
         "Home" => "index.md",
         "Basics" => Any[
             "basics/OptimalControlInMath.md",
-            "basics/DEsolution.md",
             "basics/JuMPsolution.md",
-            "basics/base.md"
+            "basics/DEsolution.md",
+            "basics/discretization.md"
         ]
     ],
 )
