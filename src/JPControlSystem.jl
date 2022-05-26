@@ -250,7 +250,7 @@ sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N)
 """
 function generateJuMPcodes(L, F, state, u, tspan, t0, tf, Φ=nothing, tf_constraint=nothing
     ; state_ub=nothing, state_lb=nothing, u_ub=nothing, u_lb=nothing,
-    N::Integer=1000, discretization::String="trapezoidal", model_name::String=nothing, writeFilePath::String=nothing,
+    N=1000, discretization="trapezoidal", model_name=nothing, writeFilePath=nothing,
     tolerance=1.0E-6)
 
     check_system(state, u, tspan, t0, state_ub, state_lb, u_ub, u_lb)
