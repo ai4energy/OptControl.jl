@@ -11,7 +11,7 @@ function check_system(state, tspan::Tuple, t0, tf)
 end
 
 function get_λ(len)
-    Symbolics.@variables λ[1:len]
+    @variables λ[1:len]
     return scalarize(λ)
 end
 
@@ -20,19 +20,19 @@ function get_Hamilton(L, F, λ)
 end
 
 function get_dλ(H, state)
-    return -Symbolics.jacobian([H], state)
+    return -jacobian([H], state)
 end
 
 function get_dHdu(H, u)
     if typeof(u) <: Vector
-        return Symbolics.jacobian([H], u)
+        return jacobian([H], u)
     else
-        return Symbolics.jacobian([H], [u])
+        return jacobian([H], [u])
     end
 end
 
 function generate_DEfunc(F, dλ, dHdu, x, λ, u, stateFuncName)
-    func = Symbolics.build_function(append!([], F, dλ, dHdu), append!([], x, λ, u))[2]
+    func = build_function(append!([], F, dλ, dHdu), append!([], x, λ, u))[2]
     func.args[1] = :(($(func.args[1].args...), p, t))
     return string("$(stateFuncName) = $(string(func))\n")
 end
@@ -44,13 +44,13 @@ function generate_BCfunc(Φ, t0, tf, state, λ, xlen, boundaryConditionFunc)
         func_tf = []
         for i in 1:xlen
             if isequal(tf[i], nothing)
-                append!(func_tf, λ[i] - Symbolics.derivative(Φ, state[i]))
+                append!(func_tf, λ[i] - derivative(Φ, state[i]))
             else
                 append!(func_tf, state[i] - tf[i])
             end
         end
-        func_t0 = Symbolics.build_function(func_t0, state)[1]
-        func_tf = Symbolics.build_function(func_tf, append!([], state, λ))[1]
+        func_t0 = build_function(func_t0, state)[1]
+        func_tf = build_function(func_tf, append!([], state, λ))[1]
         return string(func_t0), string(func_tf)
     end
 
@@ -126,7 +126,7 @@ f[\\boldsymbol{x}(t),\\boldsymbol{u}(t),t]
 Example:
 
 ```julia
-using Symbolics,OptControl
+using OptControl
 @variables t u x[1:2]
 f = [0 1; 0 0] * x + [0, 1] * u
 L = 0.5 * u^2

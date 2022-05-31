@@ -1,11 +1,14 @@
 module OptControl
-using Symbolics
+using ModelingToolkit
 using LinearAlgebra
 import JuMP
 using DifferentialEquations
 using DocStringExtensions
 
-scalarize = Symbolics.scalarize
+jacobian = ModelingToolkit.Symbolics.jacobian
+scalarize = ModelingToolkit.Symbolics.scalarize
+derivative = ModelingToolkit.Symbolics.derivative
+build_function = ModelingToolkit.build_function
 
 function scalarize_data(args...)
     return (scalarize(arg) for arg in args)
@@ -13,9 +16,9 @@ end
 
 function checkPkg(pkgName)
     if pkgName == "JuMP"
-        pkgNeeds = "[\"JuMP\", \"Ipopt\", \"Symbolics\"]"
+        pkgNeeds = "[\"JuMP\", \"Ipopt\", \"ModelingToolkit\"]"
     else
-        pkgNeeds = "[\"DifferentialEquations\", \"Symbolics\"]"
+        pkgNeeds = "[\"DifferentialEquations\", \"ModelingToolkit\"]"
     end
     return "begin
     using Pkg
@@ -26,8 +29,8 @@ function checkPkg(pkgName)
 end
 
 function initial(pkgName)
-    jumpcode = "$(checkPkg(pkgName))\nusing Symbolics,Ipopt,JuMP\n"
-    decode = "$(checkPkg(pkgName))\nusing Symbolics,DifferentialEquations,LinearAlgebra\n"
+    jumpcode = "$(checkPkg(pkgName))\nusing ModelingToolkit,Ipopt,JuMP\n"
+    decode = "$(checkPkg(pkgName))\nusing ModelingToolkit,DifferentialEquations,LinearAlgebra\n"
     if pkgName == "JuMP"
         return jumpcode
     else
@@ -42,8 +45,8 @@ end
 include("discretization.jl")
 include("JPControlSystem.jl")
 include("DEControlSystem.jl")
+include("MtkControlSystem.jl")
 
 export generateJuMPcodes, generateDEcodes, scalarize
-export @variables
 
 end

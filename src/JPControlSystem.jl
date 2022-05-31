@@ -1,9 +1,12 @@
-function check_system(state, u, tspan::Tuple, t0, state_ub, state_lb, u_ub, u_lb)
+function check_system(state, u, tspan::Tuple, t0, tf, state_ub, state_lb, u_ub, u_lb)
     if length(tspan) != 2
         error("tspan errors: length of tspan must be 2, include start and end time")
     end
     if length(t0) != length(state)
         error("t0 errors: length of 't0' must be equal to 'state'")
+    end
+    if length(tf) != length(state)
+        error("tf errors: length of 'tf' must be equal to 'state'")
     end
 
     if !isequal(state_ub, nothing)
@@ -97,9 +100,9 @@ function generate_func(F, x, u, name)
         return "\n"
     else
         if typeof(F) <: Vector
-            func = Symbolics.build_function(F, append!([], x, u))[1]
+            func = build_function(F, append!([], x, u))[1]
         else
-            func = Symbolics.build_function(F, append!([], x, u))
+            func = build_function(F, append!([], x, u))
         end
         return "$(name) = $(func)\n"
     end
@@ -107,7 +110,7 @@ end
 
 function generate_disfunc(discretization::String)
     if discretization == "trapezoidal"
-        return "discretization_$(discretization) = $(trapezoidal)\n"
+        return "discretization_$(discretization) = $(trapezoidal["code"])\n"
     else
         error("discretization method error: please choose rigth discretization methods")
     end
@@ -237,7 +240,7 @@ dt = (endTime - startTime) / N
 Example:
 
 ```julia
-using Symbolics,OptControl
+using OptControl
 @variables t u x[1:2]
 f = [0 1; 0 0] * x + [0, 1] * u
 L = 0.5 * u^2
@@ -253,7 +256,7 @@ function generateJuMPcodes(L, F, state, u, tspan, t0, tf, Φ=nothing, tf_constra
     N=1000, discretization="trapezoidal", model_name=nothing, writeFilePath=nothing,
     tolerance=1.0E-6)
 
-    check_system(state, u, tspan, t0, state_ub, state_lb, u_ub, u_lb)
+    check_system(state, u, tspan, t0, tf, state_ub, state_lb, u_ub, u_lb)
     state_name = get_name(state)
     u_name = get_name(u)
     xlen, ulen = xu_length(state, u)
