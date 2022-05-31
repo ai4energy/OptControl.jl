@@ -119,7 +119,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-`generateJuMPcodes` will generate the solution code that using `JuMP.jl` to solve problem
+`generateMTKcodes` will transform odesystem to control problem and generate the solution code that using `JuMP.jl` to solve problem
 
 A general form of optimal control problem:
 
@@ -135,7 +135,7 @@ args:
 ```math
 L[\\boldsymbol{x}(t),\\boldsymbol{u}(t),t]
 ```
-- `F`: above f, in the form of `ModelingToolkit.AbstractSystem`
+- `F`: above f, in the form of `ModelingToolkit.AbstractSystem`, 
 ```math
 f[\\boldsymbol{x}(t),\\boldsymbol{u}(t),t]
 ```

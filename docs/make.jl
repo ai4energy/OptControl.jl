@@ -6,7 +6,7 @@ makedocs(;
     authors="yjy <522432938@qq.com> and contributors",
     sitename="OptControl.jl",
     format=Documenter.HTML(;
-        prettyurls=get(ENV, "CI", "false") == "true",
+        # prettyurls=get(ENV, "CI", "false") == "true",
         canonical="https://jake484.github.io/OptControl.jl",
         # assets=["assets/logo.svg"]
     ),
@@ -23,4 +23,5 @@ makedocs(;
 
 deploydocs(
     repo="github.com/jake484/OptControl.jl.git";
-    push_preview=true)
+    push_preview=true
+)

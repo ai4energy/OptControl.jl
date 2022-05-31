@@ -33,7 +33,7 @@ $$x_1(t) = 0.5*t^3-1.75*t^2+t+1$$
 and we can campare the difference between them by using *Mean Square Error(MSE)*.
 
 ```@example
-using OptControl, Statistics
+using OptControl, Statistics, ModelingToolkit
 @variables t u x[1:2]
 f = [0 1; 0 0] * x + [0, 1] * u
 L = 0.5 * u^2
@@ -64,7 +64,7 @@ $$x_1(t) = t^3-3.0*t^2+t+1$$
 and get *MSE*.
 
 ```@example
-using OptControl, Statistics
+using OptControl, Statistics, ModelingToolkit, ModelingToolkit
 @variables t u x[1:2]
 f = [0 1; 0 0] * x + [0, 1] * u
 L = 0.5 * u^2
@@ -95,7 +95,7 @@ $$x_1(t) = -1/14*t^2*(t - 6)$$
 and get *MSE*.
 
 ```@example
-using OptControl, Statistics
+using OptControl, Statistics, ModelingToolkit
 @variables t u x[1:2]
 f = [0 1; 0 0] * x + [0, 1] * u
 L = 0.5 * u^2
@@ -130,7 +130,7 @@ $$x_1(t) = 0.5*t^3-1.75*t^2+t+1$$
 and get *MSE*.
 
 ```@example
-using OptControl, Statistics
+using OptControl, Statistics, ModelingToolkit
 @variables t u x[1:2]
 f = [0 1; 0 0] * x + [0, 1] * u
 L = 0.5 * u^2
@@ -166,7 +166,7 @@ u_1=-\frac{9}{14}\\u_2=\frac{9}{14}*t-\frac{9}{7}
 and get *MSE*.
 
 ```@example
-using OptControl, Statistics
+using OptControl, Statistics, ModelingToolkit
 @variables t u[1:2] x[1:2]
 f = [0 1; 0 0] * x + [1 0; 0 1] * u
 L = 0.5 * (u[1]^2 + u[2]^2)
@@ -200,7 +200,7 @@ x_1(t) = 2*e^{-t} - 1
 and get *MSE*.
 
 ```@example
-using OptControl, Statistics
+using OptControl, Statistics, ModelingToolkit
 @variables t u x[1:2]
 f = [-1 0; 1 0] * x + [1, 0] * u
 L = 0
