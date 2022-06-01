@@ -6,9 +6,10 @@ makedocs(;
     modules=[OptControl],
     authors="yjy <522432938@qq.com> and contributors",
     sitename="OptControl.jl",
+    clean = true,doctest = false,
     format=Documenter.HTML(;
         # prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://jake484.github.io/OptControl.jl",
+        canonical="https://ai4energy.github.io/OptControl.jl/stable",
         # assets=["assets/logo.svg"]
     ),
     pages=[
@@ -25,6 +26,6 @@ makedocs(;
 )
 
 deploydocs(
-    repo="github.com/jake484/OptControl.jl.git";
+    repo="github.com/ai4energy/OptControl.jl.git";
     push_preview=true
 )
