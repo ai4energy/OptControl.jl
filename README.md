@@ -2,7 +2,7 @@
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ai4energy.github.io/OptControl.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ai4energy.github.io/OptControl.jl/dev)
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/ai4energy/OptControl.jl?svg=true)](https://ci.appveyor.com/project/jake484/OptControl-jl)
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/ai4energy/OptControl.jl?svg=true)](https://ci.appveyor.com/project/ai4energy/OptControl-jl)
 
 OptControl.jl is a interface that use symbols to build optimal control problem based on [ModelingToolkit.jl](https://mtk.sciml.ai/stable/), and then transforms optimal control problem to:
 
