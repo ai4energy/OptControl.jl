@@ -1,8 +1,8 @@
 # OptControl
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://jake484.github.io/OptControl.jl/stable)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://jake484.github.io/OptControl.jl/dev)
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/jake484/OptControl.jl?svg=true)](https://ci.appveyor.com/project/jake484/OptControl-jl)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ai4energy.github.io/OptControl.jl/stable)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ai4energy.github.io/OptControl.jl/dev)
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/ai4energy/OptControl.jl?svg=true)](https://ci.appveyor.com/project/jake484/OptControl-jl)
 
 OptControl.jl is a interface that use symbols to build optimal control problem based on [ModelingToolkit.jl](https://mtk.sciml.ai/stable/), and then transforms optimal control problem to:
 
@@ -33,5 +33,5 @@ N = 100
 sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N)
 ```
 
-See [document](https://jake484.github.io/OptControl.jl/dev) for more information.
+See [document](https://ai4energy.github.io/OptControl.jl/dev) for more information.
 
