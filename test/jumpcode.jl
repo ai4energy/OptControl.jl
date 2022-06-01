@@ -1,12 +1,24 @@
-using OptControl
+using OptControl, ModelingToolkit
 using Test, Statistics, LinearAlgebra
-using Symbolics
-using Statistics
+
 
 @variables akshdgio[1:10] oxcifvohsdn
 @test OptControl.get_name(akshdgio) == "akshdgio"
 @test OptControl.get_name(oxcifvohsdn) == "oxcifvohsdn"
 
+@variables t u x
+f = x + u
+L = 0.5 * u^2
+t0 = [1.0]
+tf = [0.0]
+tspan = (0.0, 1.0)
+N = 100
+sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N,writeFilePath="test.jl")
+xs = collect(range(tspan[1], tspan[2], length=N))
+an = @.(exp(xs)/(1-exp(2))-exp(2)*exp(-xs)/(1 - exp(2)))
+res = mean(abs.(an - sol[1][:, 1]))
+println("\nres:", res, "\n")
+@test res < 0.1
 
 @variables t u x[1:2]
 f = [0 1; 0 0] * x + [0, 1] * u
@@ -15,7 +27,7 @@ t0 = [1.0, 1.0]
 tf = [0.0, 0.0]
 tspan = (0.0, 2.0)
 N = 100
-sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N)
+sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N,writeFilePath="test.jl")
 xs = collect(range(tspan[1], tspan[2], length=N))
 an = @.(0.5 * xs^3 - 1.75 * xs^2 + xs + 1)
 res = mean(abs.(an - sol[1][:, 1]))
@@ -24,19 +36,19 @@ println("\nres:", res, "\n")
 
 
 
-@variables t u x[1:2]
-f = [0 1; 0 0] * x + [0, 1] * u
-L = 0.5 * u^2
-t0 = [1.0, 1.0]
-tf = [0.0, nothing]
-tspan = (0.0, 1.0)
-N = 100
-sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N)
-xs = collect(range(tspan[1], tspan[2], length=N))
-an = @.(xs^3 - 3.0 * xs^2 + xs + 1)
-res = mean(abs.(an - sol[1][:, 1]))
-println("\nres:", res, "\n")
-@test res < 0.01
+# @variables t u x[1:2]
+# f = [0 1; 0 0] * x + [0, 1] * u
+# L = 0.5 * u^2
+# t0 = [1.0, 1.0]
+# tf = [0.0, nothing]
+# tspan = (0.0, 1.0)
+# N = 100
+# sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N)
+# xs = collect(range(tspan[1], tspan[2], length=N))
+# an = @.(xs^3 - 3.0 * xs^2 + xs + 1)
+# res = mean(abs.(an - sol[1][:, 1]))
+# println("\nres:", res, "\n")
+# @test res < 0.01
 
 
 

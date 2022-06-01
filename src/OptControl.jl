@@ -46,7 +46,12 @@ include("discretization.jl")
 include("JPControlSystem.jl")
 include("DEControlSystem.jl")
 include("MtkControlSystem.jl")
+include("NLJpControlSystem.jl")
 
-export generateJuMPcodes, generateDEcodes, scalarize
+export generateJuMPcodes
+export generateDEcodes
+export generateMTKcodes
+export generateNLJuMPcodes
+export scalarize
 
 end

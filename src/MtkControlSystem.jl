@@ -131,7 +131,7 @@ s.t. \\hspace{0.4cm} \\dot{\\boldsymbol{x}} =f[\\boldsymbol{x}(t),\\boldsymbol{u
 
 args:
 
-- `L`: above L
+- `L`: above L, function of state and u.
 ```math
 L[\\boldsymbol{x}(t),\\boldsymbol{u}(t),t]
 ```

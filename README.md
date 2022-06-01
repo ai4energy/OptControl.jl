@@ -4,7 +4,7 @@
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://jake484.github.io/OptControl.jl/dev)
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/jake484/OptControl.jl?svg=true)](https://ci.appveyor.com/project/jake484/OptControl-jl)
 
-OptControl.jl is a interface that use symbols to build optimal control problem based on [Symbolics.jl](https://symbolics.juliasymbolics.org/dev/), and then transforms optimal control problem to:
+OptControl.jl is a interface that use symbols to build optimal control problem based on [ModelingToolkit.jl](https://mtk.sciml.ai/stable/), and then transforms optimal control problem to:
 
 * Differential Equations Problems(DEP)
 * Optimzation Problems(OP)
@@ -22,7 +22,7 @@ $$
 And use `OptControl.jl` to transform it to `JuMP` code to solve it.
 
 ```julia
-using Symbolics,OptControl
+using ModelingToolkit,OptControl
 @variables t u x[1:2]
 f = [0 1; 0 0] * x + [0, 1] * u
 L = 0.5 * u^2

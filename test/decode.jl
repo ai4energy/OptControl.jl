@@ -1,6 +1,5 @@
-using OptControl
+using OptControl, ModelingToolkit
 using Test, Statistics, LinearAlgebra
-using Symbolics
 using Statistics
 
 

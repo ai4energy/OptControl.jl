@@ -1,5 +1,6 @@
 using OptControl
 using Documenter
+using ModelingToolkit,Test
 
 makedocs(;
     modules=[OptControl],
@@ -15,7 +16,9 @@ makedocs(;
         "Basics" => Any[
             "basics/OptimalControlInMath.md",
             "basics/JuMPsolution.md",
+            "basics/NLJuMPsolution.md",
             "basics/DEsolution.md",
+            "basics/mtkSupport.md",
             "basics/discretization.md"
         ]
     ]

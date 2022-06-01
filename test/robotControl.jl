@@ -1,7 +1,5 @@
-using OptControl
+using OptControl,ModelingToolkit
 using Test, Statistics, LinearAlgebra
-using Symbolics
-using Statistics
 
 #========================test_1===============================#
 function initPara()

@@ -1,18 +1,20 @@
-# Optimization Solution
+# Linear Optimization Solution
 
-`Optimization solution` uses `JuMP.jl` to solve the Problems. Build the problem and call `generateJuMPcodes`, work done!
+`Linear Optimization solution` uses `JuMP.jl` to solve the Problems. Build the problem and call `generateJuMPcodes`, work done!
 
 ```@docs
 generateJuMPcodes
 ```
 
-Let's see some examples. If you are not familar with Symbolics.jl, you can see the [document](https://symbolics.juliasymbolics.org/dev/) and try some tests about symbolic computation
+Let's see some examples. If you are not familar with ModelingToolkit.jl, you can see the [Symbolics.jl  document](https://symbolics.juliasymbolics.org/dev/) (which ModelingToolkit.jl based on) and try some tests about symbolic computation
 
 ```@example
-using OptControl
+using OptControl,ModelingToolkit
 @variables x[1:2] y[1:2]
 print(scalarize(rand(1:10,2,2)*x+rand(1:10,2,2)*y))
 ```
+
+PS: scalarize is from Symbolics.jl
 
 **If you need, pass a name to  `writeFilePath`  and do some changes in script**.
 

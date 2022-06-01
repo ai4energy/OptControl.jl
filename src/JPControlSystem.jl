@@ -95,16 +95,32 @@ function add_boundary_constraint(model_name::String, xlen, t0, tf)
     return str
 end
 
-function generate_func(F, x, u, name)
+function generate_func(F, x, u, name, mode=1)
     if isequal(F, nothing)
         return "\n"
     else
-        if typeof(F) <: Vector
-            func = build_function(F, append!([], x, u))[1]
+        if mode == 1
+            if typeof(F) <: Vector
+                func = build_function(F, append!([], x, u))[mode]
+            else
+                func = build_function(F, append!([], x, u))
+            end
+            return "$(name) = $(func)\n"
+        elseif mode == 2
+            if typeof(F) <: Vector
+                func = build_function(F, append!([], x, u))[mode]
+            else
+                func = build_function([F], append!([], x, u))[mode]
+            end
+            return "$(name) = $(func)\n"
         else
-            func = build_function(F, append!([], x, u))
+            if typeof(F) <: Vector
+                func = build_function(F, append!([], x, u))[1]
+            else
+                func = build_function([F], append!([], x, u))[1]
+            end
+            return "$(name) = $(func)\n"
         end
-        return "$(name) = $(func)\n"
     end
 end
 
@@ -226,8 +242,8 @@ x_{1}+x_{2}=0
 ```
 - `state_ub`: state's upper limit, length of `state_ub` must be equal to length of state, default: nothing
 - `state_lb`: state's lower limit, length of `state_lb` must be equal to length of state, default: nothing
-- `u_ub`: u's upper limit, length of `state_ub` must be equal to length of u, default: nothing
-- `u_lb`: u's lower limit, length of `state_lb` must be equal to length of u, default: nothing
+- `u_ub`: u's upper limit, length of `u_ub` must be equal to length of u, default: nothing
+- `u_lb`: u's lower limit, length of `u_lb` must be equal to length of u, default: nothing
 - `N`: Number of discrete, default: 1000
 ```math
 dt = (endTime - startTime) / N
@@ -279,7 +295,7 @@ function generateJuMPcodes(L, F, state, u, tspan, t0, tf, Φ=nothing, tf_constra
     codeString *= initial_funs("Function Parts")
     codeString *= generate_disfunc(discretization)
     codeString *= generate_func(L, state, u, L_objectiveFuncName)
-    codeString *= generate_func(F, state, u, stateFuncName)
+    codeString *= generate_func(F, state, u, stateFuncName, 3)
     codeString *= generate_func(Φ, state, u, Φ_objectiveFuncName)
     codeString *= generate_func(tf_constraint, state, u, constraintFuncName)
 

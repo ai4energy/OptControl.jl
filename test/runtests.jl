@@ -1,6 +1,3 @@
-using OptControl
-using Test, Statistics, LinearAlgebra
-using Symbolics
 using SafeTestsets
 
 @safetestset "DE methods Test" begin include("decode.jl") end
@@ -12,3 +9,5 @@ using SafeTestsets
 @safetestset "MTK_Eqs Test" begin include("mtk_simpleeqs.jl") end
 
 @safetestset "RobotControl Test" begin include("robotControl.jl") end
+
+@safetestset "NLJump methods Test" begin include("Nljumpcode.jl") end
