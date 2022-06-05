@@ -26,6 +26,8 @@ makedocs(;
 )
 
 deploydocs(
-    repo="github.com/ai4energy/OptControl.jl.git";
-    push_preview=true
+    repo="github.com/ai4energy/OptControl.jl.git",
+    push_preview=true,
+    versions = ["stable" => "v^", "v#.#", "dev" => "dev", "latest" => "dev"],
+    forcepush = true
 )
