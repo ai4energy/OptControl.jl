@@ -15,6 +15,20 @@ Features of OptControl.jl:
 * Script generation provides a template of `JuMP.jl` solution code or `DifferentialEquations.jl` solution code, and you can design your code based on template.
 * Get results directly if you want.
 
+## Citation
+
+If you use OptControl in your work, please cite the this [paper](https://arxiv.org/abs/2207.13229):
+
+```bib
+@article{yang2022optcontrol,
+  title={OptControl.jl: An interpreter for optimal control problem},
+  author={Jingyi Yang, Yuebao Yang, Mingtao Li},
+  journal={arXiv preprint arXiv:2207.13229},
+  year={2022},
+  primaryClass={math.OC}
+}
+```
+
 ## Quick Start
 
 ### Install
@@ -134,7 +148,9 @@ Get state:
 
 ```julia
 x = sol[1]
+```
 
+```powershell
 100×2 Matrix{Float64}:
  1.0           1.0
  1.01947       0.946775
@@ -181,7 +197,9 @@ Get u:
 
 ```julia
 u = sol[2]
+```
 
+```powershell
 100×1 Matrix{Float64}:
  -1.7845763373682157
  -3.537912486353386
