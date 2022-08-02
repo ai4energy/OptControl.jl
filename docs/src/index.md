@@ -21,7 +21,7 @@ If you use OptControl in your work, please cite the this [paper](https://arxiv.o
 
 ```bib
 @article{yang2022optcontrol,
-  title={OptControl.jl: An interpreter for optimal control problem},
+  title={OptControl.jl: An Interpreter for Optimal Control Problem},
   author={Jingyi Yang, Yuebao Yang, Mingtao Li},
   journal={arXiv preprint arXiv:2207.13229},
   year={2022},
