@@ -2,7 +2,7 @@ function generate_NLfunc(F, name, state, u, xlen)
     func = generate_func(F, state, u, name, 2)
     inside_func = "_$(func)"
     str = "$(name) = function (x, u, t)\nout = Vector{Any}(nothing, $xlen)
-    $(inside_func)\n_$(name)(out,append!([],x,u))\nreturn out\nend"
+    $(inside_func)\n_$(name)(out,append!([],x,u))\nreturn out\nend\n"
     return str
 end
 
