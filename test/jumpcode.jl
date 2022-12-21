@@ -17,7 +17,6 @@ sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N,writeFilePath="test.jl")
 xs = collect(range(tspan[1], tspan[2], length=N))
 an = @.(exp(xs)/(1-exp(2))-exp(2)*exp(-xs)/(1 - exp(2)))
 res = mean(abs.(an - sol[1][:, 1]))
-println("\nres:", res, "\n")
 @test res < 0.1
 
 @variables t u x[1:2]
@@ -31,7 +30,6 @@ sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N,writeFilePath="test.jl")
 xs = collect(range(tspan[1], tspan[2], length=N))
 an = @.(0.5 * xs^3 - 1.75 * xs^2 + xs + 1)
 res = mean(abs.(an - sol[1][:, 1]))
-println("\nres:", res, "\n")
 @test res < 0.1
 
 
@@ -64,7 +62,6 @@ sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf, nothing, tf_con; N=N)
 xs = collect(range(tspan[1], tspan[2], length=N))
 an = @.(-1 / 14 * xs^2 * (xs - 6))
 res = mean(abs.(an - sol[1][:, 1]))
-println("\nres:", res, "\n")
 @test res < 0.01
 
 
@@ -80,7 +77,6 @@ sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf, nothing, tf_con; N=N)
 xs = collect(range(tspan[1], tspan[2], length=N))
 an = @.(0.5 * xs^3 - 1.75 * xs^2 + xs + 1)
 res = mean(abs.(an - sol[1][:, 1]))
-println("\nres:", res, "\n")
 @test res < 0.1
 
 
@@ -96,7 +92,6 @@ xs = collect(range(tspan[1], tspan[2], length=N))
 an_u2 = @.(9 / 14 * xs - 9 / 7)
 res1 = mean(abs.(-9 / 14 .- sol[2][:, 1]))
 res2 = mean(abs.(an_u2 - sol[2][:, 2]))
-println("\nres1:", res1, "\n", "res2:", res2, "\n")
 @test res1 < 0.05 && res2 < 0.05
 
 
@@ -115,7 +110,6 @@ sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf, Φ, nothing;
 xs = collect(range(tspan[1], tspan[2], length=N))
 an = @.(2 * exp(-xs) - 1)
 res = mean(abs.(an - sol[1][:, 1]))
-println("\nres:", res, "\n")
 @test res < 0.01
 
 
@@ -131,10 +125,4 @@ sol = generateJuMPcodes(L, f, x, u, tspan, t0, tf; N=N
 xs = collect(range(tspan[1], tspan[2], length=N))
 an = @.(2 / (4 - sin(2)^2) * ((cos(2) * sin(2) - 2) * cos(xs) + sin(2)^2 * sin(xs)))
 res = mean(abs.(an - sol[2][:, 1]))
-println("\nres:", res, "\n")
 @test res < 0.1
-
-
-
-
-

@@ -20,12 +20,12 @@ function checkPkg(pkgName)
     else
         pkgNeeds = "[\"DifferentialEquations\", \"ModelingToolkit\"]"
     end
-    return "begin
+    return "
     using Pkg
     pkgNeeds = $(pkgNeeds)
     alreadyGet = keys(Pkg.project().dependencies)
     toAdd = [package for package in pkgNeeds if package ∉ alreadyGet]
-    isempty(toAdd) ? nothing : Pkg.add(toAdd)\nend"
+    isempty(toAdd) ? nothing : Pkg.add(toAdd)\n"
 end
 
 function initial(pkgName)
